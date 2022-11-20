@@ -3,6 +3,10 @@ import './less/index.less'
 // Your code goes here!
 const mainNav = document.querySelector(".main-navigation");
 
+
+
+
+
 mainNav.addEventListener('mouseenter', (evt)=> {
     mainNav.setAttribute("style","background-color: #FAE3D1;");
 })
@@ -23,3 +27,11 @@ window.addEventListener("scroll", function changeBg(){
         this.document.body.style.backgroundColor = "#FFE1C6"
     }
 })
+
+// zoomming in on bus on click
+const busImage = document.querySelector(".intro img");
+
+busImage.addEventListener("click", function(evt){
+   busImage.setAttribute("style","object-fit: none;")
+} )
+
