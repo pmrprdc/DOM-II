@@ -35,3 +35,19 @@ busImage.addEventListener("click", function(evt){
    busImage.setAttribute("style","object-fit: none;")
 } )
 
+// on keydown space bar the page goes blank and comes back alive
+
+document.addEventListener("keydown", (evt)=>{
+    if(evt.key === "h"){
+        busImage.setAttribute ("style", `transition: opacity 1s; opacity: 0; `)
+        console.log("something happened")
+         
+    } else if(evt.key === "s"){
+        busImage.setAttribute ("style", `transition: opacity 1s; opacity: 1;`)
+        
+    }
+    
+
+
+})
+
