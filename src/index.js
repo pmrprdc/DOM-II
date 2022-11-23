@@ -64,4 +64,9 @@ function zoom(event) {
   
  //addeventlistener
  window.addEventListener("wheel", zoom);
+
+ window.addEventListener("load", (evt)=>{
+    mainNav.setAttribute("style", "transform: rotate(360deg); transition: transform 1s")
+   
+ })
   
