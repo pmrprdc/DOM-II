@@ -1,3 +1,4 @@
+import { createResponseComposition } from 'msw';
 import './less/index.less'
 
 // Your code goes here!
@@ -80,4 +81,16 @@ const mapImg = document.querySelector(".img-content");
 
 window.addEventListener("resize", (e)=>{
     mapImg.setAttribute("style","border: 1px solid red;")
+})
+
+
+// second image gets border on doubleclick
+
+
+
+const veniceImg = document.querySelector(".img-content:nth-of-type(1) img")
+console.log(veniceImg);
+veniceImg.addEventListener("dblclick", (e)=>{
+    veniceImg.style.border = "1px solid black"
+    console.log("doubleClicked")
 })
