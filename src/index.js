@@ -39,7 +39,7 @@ document.addEventListener("keydown", (evt)=>{
     if(evt.key === "h"){
         busImage.setAttribute ("style", `transition: opacity 1000m
         s; opacity: 0; `)
-        console.log("something happened")
+     
          
     } else if(evt.key === "s"){
         busImage.setAttribute ("style", `transition: opacity 1s; opacity: 1;`)
@@ -50,6 +50,8 @@ document.addEventListener("keydown", (evt)=>{
 
 })
 
+
+// hide nav on scroll down, show nav on scroll up
 function zoom(event) {
     
     if(event.deltaY > 0){
@@ -57,16 +59,25 @@ function zoom(event) {
     } else if (event.deltaY < 0) {
         mainNav.style.display = "flex";
     }
-    console.log(event.deltaY + "hello");
-    console.log(window.pageYOffset);
 
   }
   
  //addeventlistener
+
+
+ // spin nav slowly on load
  window.addEventListener("wheel", zoom);
 
  window.addEventListener("load", (evt)=>{
-    mainNav.setAttribute("style", "transform: rotate(360deg); transition: transform 1s")
+    mainNav.setAttribute("style", "transform: rotate(360deg); transition: transform 10s")
    
  })
   
+
+ // add border to image on window resize
+const mapImg = document.querySelector(".img-content");
+
+
+window.addEventListener("resize", (e)=>{
+    mapImg.setAttribute("style","border: 1px solid red;")
+})
