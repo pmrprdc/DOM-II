@@ -19,8 +19,6 @@ mainNav.addEventListener('mouseleave', (evt)=>{
 
 window.addEventListener("scroll", function changeBg(){
     const scrollable = document.documentElement.scrollHeight - this.window.innerHeight;
-    console.log(window.scrollY);
-    console.log(scrollable);
     if (window.scrollY === scrollable){
     this.document.body.style.backgroundColor = "#ffc6d9"
     } else if(this.window.scrollY >300 && this.window.scrollY < 500 ){
@@ -39,7 +37,8 @@ busImage.addEventListener("click", function(evt){
 
 document.addEventListener("keydown", (evt)=>{
     if(evt.key === "h"){
-        busImage.setAttribute ("style", `transition: opacity 1s; opacity: 0; `)
+        busImage.setAttribute ("style", `transition: opacity 1000m
+        s; opacity: 0; `)
         console.log("something happened")
          
     } else if(evt.key === "s"){
@@ -51,3 +50,18 @@ document.addEventListener("keydown", (evt)=>{
 
 })
 
+function zoom(event) {
+    
+    if(event.deltaY > 0){
+        mainNav.style.display = "none";
+    } else if (event.deltaY < 0) {
+        mainNav.style.display = "flex";
+    }
+    console.log(event.deltaY + "hello");
+    console.log(window.pageYOffset);
+
+  }
+  
+ //addeventlistener
+ window.addEventListener("wheel", zoom);
+  
