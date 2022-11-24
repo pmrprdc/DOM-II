@@ -94,3 +94,38 @@ veniceImg.addEventListener("dblclick", (e)=>{
     veniceImg.style.border = "1px solid black"
     console.log("doubleClicked")
 })
+
+
+const body = document.querySelector("body");
+console.log(body)
+window.addEventListener("mousemove", (e)=>{
+if(e.movementX > 0){
+    body.setAttribute("style", "background-color: beige;")
+} else if (e.movementX < 0){
+    body.setAttribute("style", "background-color: white;")
+}
+
+
+})
+
+
+// BLANK SCREEN ON MOUSE OUT
+
+
+window.addEventListener("mouseout", (e)=>{
+    body.setAttribute("style", "display:none;") 
+    console.log("mouse out")
+})
+
+window.addEventListener("mouseover", (e)=>{
+    console.log("mousein!")
+    body.setAttribute("style", "display: block")
+   
+})
+
+// ON MOUSE DOWN ANIMATE
+
+
+window.addEventListener("mousedown", (e)=>{
+    console.log("mousedown")
+})
