@@ -19,11 +19,11 @@ mainNav.addEventListener('mouseleave', (evt)=>{
 /// Changing background color on scroll
 
 window.addEventListener("scroll", function changeBg(){
-    const scrollable = document.documentElement.scrollHeight - this.window.innerHeight;
-    if (window.scrollY === scrollable){
-    this.document.body.style.backgroundColor = "#ffc6d9"
-    } else if(this.window.scrollY >300 && this.window.scrollY < 500 ){
-        this.document.body.style.backgroundColor = "#FFE1C6"
+  
+   if(this.window.scrollY >300 && this.window.scrollY < 500 ){
+        this.document.body.style.backgroundColor = "yellow"
+    } else if(this.window.scrollY >0 && this.window.scrollY < 299 ){
+        this.document.body.style.backgroundColor = "green"
     }
 })
 
@@ -89,7 +89,7 @@ window.addEventListener("resize", (e)=>{
 
 
 const veniceImg = document.querySelector(".img-content:nth-of-type(1) img")
-console.log(veniceImg);
+
 veniceImg.addEventListener("dblclick", (e)=>{
     veniceImg.style.border = "1px solid black"
     console.log("doubleClicked")
@@ -97,7 +97,7 @@ veniceImg.addEventListener("dblclick", (e)=>{
 
 
 const body = document.querySelector("body");
-console.log(body)
+
 window.addEventListener("mousemove", (e)=>{
 if(e.movementX > 0){
     body.setAttribute("style", "background-color: beige;")
@@ -113,12 +113,12 @@ if(e.movementX > 0){
 
 
 window.addEventListener("mouseout", (e)=>{
-    body.setAttribute("style", "display:none;") 
-    console.log("mouse out")
+    body.setAttribute("style", "display:none;")
+ 
 })
 
 window.addEventListener("mouseover", (e)=>{
-    console.log("mousein!")
+    
     body.setAttribute("style", "display: block")
    
 })
@@ -128,4 +128,19 @@ window.addEventListener("mouseover", (e)=>{
 
 window.addEventListener("mousedown", (e)=>{
     body.setAttribute("style", "transition: background-color 1s ease-in; background-color: blue")
+})
+
+
+const navlinks = document.querySelectorAll(".nav-link");
+
+
+
+// preventing default for links 
+
+
+navlinks.forEach(x=>{
+    x.addEventListener("click",(e)=>{
+        e.preventDefault();
+        window.alert("you have been hacked")
+    })
 })
