@@ -123,9 +123,9 @@ window.addEventListener("mouseover", (e)=>{
    
 })
 
-// ON MOUSE DOWN ANIMATE
+// ON MOUSE DOWN ANIMATES BACKGROUND-COLOR TO BLUE
 
 
 window.addEventListener("mousedown", (e)=>{
-    console.log("mousedown")
+    body.setAttribute("style", "transition: background-color 1s ease-in; background-color: blue")
 })
